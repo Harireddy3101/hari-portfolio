@@ -1,0 +1,51 @@
+.about-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.about-content {
+  max-width: 800px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+p {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.skills {
+  background-color: var(--card-bg-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skills h3 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.skills ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.skills li {
+  color: var(--text-color);
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+} 

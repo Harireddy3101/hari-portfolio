@@ -1,0 +1,23 @@
+footer {
+  background-color: var(--header-bg-color);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: color var(--transition-speed);
+}
+
+.social-icons a:hover {
+  color: var(--primary-color);
+} 

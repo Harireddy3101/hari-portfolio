@@ -1,0 +1,36 @@
+section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Project card styles can be added here when you add the cards */
+.project-card {
+  background-color: var(--card-bg-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition-speed);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+} 

@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import fonts first */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Then Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Then the rest of your CSS */
+:root {
+  --primary-color: #768997;
+  --secondary-color: #a8b5c1;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --header-bg-color: var(--secondary-color);
+  --card-bg-color: #fff;
+  --section-bg-color: #fff;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+body.dark-mode {
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --primary-color: #1abc9c;
+  --secondary-color: #34495e;
+  --header-bg-color: #2c3e50;
+  --card-bg-color: #2c3e50;
+  --section-bg-color: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color var(--transition-speed),
+              color var(--transition-speed);
+}
+
+/* Add your global styles here */

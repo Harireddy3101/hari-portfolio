@@ -1,0 +1,545 @@
+/* CSS Variables for themes */
+:root {
+  --primary-color: #768997;
+  --secondary-color: #a8b5c1;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --header-bg-color: var(--secondary-color);
+  --card-bg-color: #fff;
+  --section-bg-color: #fff;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+body.dark-mode {
+  --background-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --primary-color: #1abc9c;
+  --secondary-color: #34495e;
+  --header-bg-color: #2c3e50;
+  --card-bg-color: #2c3e50;
+  --section-bg-color: #2c3e50;
+}
+
+/* Apply background color to html and body */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Ensure the content div takes up the full height and inherits background */
+.content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Update main to inherit background */
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Update section backgrounds */
+section {
+  background-color: var(--section-bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-out;
+}
+
+section:hover {
+  animation: bulgeEffect 0.3s forwards;
+}
+
+/* Ensure text is visible in all sections */
+section h2,
+section p,
+section h3 {
+  color: var(--text-color);
+  transition: color var(--transition-speed);
+}
+
+/* Update the project cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Update header styles */
+header {
+  background-color: var(--header-bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+/* Update form inputs for better visibility in dark mode */
+input, textarea {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Update footer */
+footer {
+  background-color: var(--header-bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  text-align: center;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.social-icons a {
+  color: var(--text-color);
+  font-size: 24px;
+  margin: 0 10px;
+  transition: color var(--transition-speed);
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  z-index: 9999;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+#theme-toggle:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Profile container */
+.profile-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Intro animation styles */
+.intro-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: transform 0.5s ease-in-out;
+}
+
+.intro-text {
+  font-size: 3rem;
+  color: var(--background-color);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Reveal animation */
+@keyframes revealAnimation {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Slide-in animation */
+.slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contact form styles */
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+}
+
+#contact textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#contact button[type="submit"] {
+  width: 100%;
+  max-width: 200px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#contact button[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Replace the previous bulge effect with this new hover effect */
+@keyframes bulgeEffect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+  }
+}
+
+section {
+  /* Existing styles... */
+  transition: transform 0.3s ease-out;
+}
+
+section:hover {
+  animation: bulgeEffect 0.3s forwards;
+}
+
+/* Remove the .section-bulge class as it's no longer needed */
+
+/* Base styles for mobile devices */
+@media screen and (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  #contact input,
+  #contact textarea,
+  #contact button[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* Styles for medium devices */
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  #contact input,
+  #contact textarea {
+    width: 80%;
+  }
+
+  #contact button[type="submit"] {
+    width: 50%;
+  }
+}
+
+/* Styles for large devices */
+@media screen and (min-width: 1201px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  #contact input,
+  #contact textarea {
+    width: 60%;
+  }
+
+  #contact button[type="submit"] {
+    width: 30%;
+  }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure flexbox layout for better responsiveness */
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+/* Adjust the theme toggle button for better visibility on small screens */
+#theme-toggle {
+  font-size: 14px;
+  padding: 8px 12px;
+}
+
+@media screen and (max-width: 600px) {
+  #theme-toggle {
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* Ensure proper spacing for all screen sizes */
+body {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Adjust footer for better responsiveness */
+footer {
+  padding: 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  margin: 5px;
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger-menu span {
+  height: 3px;
+  width: 25px;
+  background-color: var(--text-color);
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive styles for small screens */
+@media screen and (max-width: 600px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  nav ul.nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--header-bg-color);
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  nav ul.nav-menu.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  /* Adjust header padding for small screens */
+  header {
+    padding: 10px 20px;
+  }
+}
